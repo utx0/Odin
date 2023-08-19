@@ -1,27 +1,13 @@
-extern crate dotenv;
-
-use dotenv::dotenv;
-use std::env;
-
-// const NODE_URI: &'static str = "/thorchain/nodes";
-// const VAULTS_URI: &'static str = "/thorchain/vaults/asgard";
+use thorchain_rs::apis::configuration::Configuration;
+use thorchain_rs::apis::vaults_api::asgard;
+use thorchain_rs::apis::vaults_api::AsgardParams;
 
 #[tokio::main]
 async fn main() {
-    dotenv().ok();
+    let params = AsgardParams::default();
+    let config = Configuration::default();
 
-    // let node = env::var("NODE").expect("NODE must be set");
+    let vaults = asgard(&config, params).await.unwrap();
 
-    // println!("NODE_URL: {}{}", node, NODE_URI);
-    // println!("VAULTS_URL: {}{}", node, VAULTS_URI);
-
-    // let node_url = format!("{}{}", node, NODE_URI);
-    // let vaults_url = format!("{}{}", node, VAULTS_URI);
-
-    // let resp = reqwest::blocking::get(&node_url).unwrap();
-    // let vaults = reqwest::blocking::get(&vaults_url).unwrap();
-
-    // println!("NODE: {}", resp.text().unwrap());
-
-
+    println!("VAULTS: {:#?}", vaults);
 }
