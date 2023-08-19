@@ -20,5 +20,5 @@ fn main() {
     let resp = reqwest::blocking::get(&node_url).unwrap();
     let vaults = reqwest::blocking::get(&vaults_url).unwrap();
 
-    println!("NODE: {}", resp.status());
+    println!("NODE: {}", resp.text().unwrap());
 }

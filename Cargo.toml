@@ -1,3 +1,3 @@
 [workspace]
-members = ["thorchain-rust", "Odin", "Odin-cli"]
-default-members = ["Odin"]
+members = ["thorchain-rust", "odin", "odin-cli"]
+default-members = ["odin"]

@@ -3,20 +3,6 @@
 version = 3
 
 [[package]]
-name = "Odin"
-version = "0.1.0"
-dependencies = [
- "dotenv",
- "reqwest",
- "serde_json",
- "tokio",
-]
-
-[[package]]
-name = "Odin-cli"
-version = "0.1.0"
-
-[[package]]
 name = "addr2line"
 version = "0.20.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -484,6 +470,20 @@ checksum = "8bda667d9f2b5051b8833f59f3bf748b28ef54f850f4fcb389a252aa383866d1"
 dependencies = [
  "memchr",
 ]
+
+[[package]]
+name = "odin"
+version = "0.1.0"
+dependencies = [
+ "dotenv",
+ "reqwest",
+ "serde_json",
+ "tokio",
+]
+
+[[package]]
+name = "odin-cli"
+version = "0.1.0"
 
 [[package]]
 name = "once_cell"
