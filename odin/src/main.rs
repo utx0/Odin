@@ -1,13 +1,15 @@
+use state::State;
 use thorchain_rs::apis::configuration::Configuration;
 use thorchain_rs::apis::vaults_api::asgard;
 use thorchain_rs::apis::vaults_api::AsgardParams;
 
+mod state;
+
 #[tokio::main]
 async fn main() {
-    let params = AsgardParams::default();
-    let config = Configuration::default();
+    let mut state = state::State::new();
 
-    let vaults = asgard(&config, params).await.unwrap();
+    state.update_vaults().await;
 
-    println!("VAULTS: {:#?}", vaults);
+    println!("{:?}", state.print_vaults()); 
 }
